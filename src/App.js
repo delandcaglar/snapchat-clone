@@ -29,6 +29,11 @@ function App() {
                     <Preview/>
                 </div>
               </Route>
+              <Route path="/chats">
+                <div>
+                    <Chats/>
+                </div>
+              </Route>
 
             </Switch>
           </div>
