@@ -8,6 +8,8 @@ import {
   Link
 } from "react-router-dom";
 import Preview from "./Preview";
+import Chats from "./Chats";
+import ChatView from "./ChatView";
 
 
 
@@ -16,25 +18,27 @@ function App() {
       <div className="app">
           <Router>
           <div className="app__body">
-            {/* A <Switch> looks through its children <Route>s and
-                renders the first one that matches the current URL. */}
             <Switch>
-              <Route exact path="/">
-                <div>
-                    <WebcamCapture/>
-                </div>
-              </Route>
-              <Route path="/preview">
-                <div>
-                    <Preview/>
-                </div>
-              </Route>
-              <Route path="/chats">
-                <div>
-                    <Chats/>
-                </div>
-              </Route>
-
+                <Route exact path="/">
+                    <div>
+                        <WebcamCapture/>
+                    </div>
+                </Route>
+                <Route path="/preview">
+                    <div>
+                        <Preview/>
+                    </div>
+                </Route>
+                <Route exact path="/chats">
+                    <div>
+                        <Chats/>
+                    </div>
+                </Route>
+                <Route path="/chats/view">
+                    <div>
+                        <ChatView/>
+                    </div>
+                </Route>
             </Switch>
           </div>
         </Router>
