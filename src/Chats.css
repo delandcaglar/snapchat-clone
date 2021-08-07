@@ -30,9 +30,12 @@
 
 
 .chats__avatar{
+    z-index: 99;
     height: 25px !important;
     width: 25px !important;
+    cursor: pointer;
 }
+
 
 
 .chats__search{
@@ -61,6 +64,44 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
+
+.chats__takePicIcon{
+    position: absolute;
+    background-color: white;
+    border-radius: 200px;
+    color: gray;
+    font-size: 40px;
+    cursor: pointer;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+.chats__takePicIcon:hover{
+    opacity: 0.8;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

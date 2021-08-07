@@ -32,6 +32,15 @@
     font-size: 9px;
 }
 
+.chats__searchIcon{
+    color: white;
+    font-size: 13px !important;
+}
+
+.chats__chatIcon{
+    color: white;
+    font-size: 18px !important;
+}
 
 
 

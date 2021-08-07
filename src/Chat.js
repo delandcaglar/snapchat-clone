@@ -3,9 +3,9 @@ import "./Chat.css"
 import {Avatar} from "@material-ui/core";
 import {StopRounded} from "@material-ui/icons";
 import TimeAgo from 'react-timeago';
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {selectCameraImage} from "./features/cameraSlice";
-import {selectImage} from "./features/appSlice";
+import {selectImage, selectUser} from "./features/appSlice";
 import {db} from "./firebase";
 import {useHistory} from "react-router-dom";
 
@@ -13,6 +13,8 @@ import {useHistory} from "react-router-dom";
 function Chat({id,username,timestamp,imageUrl,read,profilePic}) {
     const dispatch = useDispatch()
     const history = useHistory()
+
+
     const open = ()=>{
         if(!read){
             dispatch(selectImage(imageUrl))
@@ -28,7 +30,7 @@ function Chat({id,username,timestamp,imageUrl,read,profilePic}) {
             <div className="chat__info">
                 <h4>{username}</h4>
                 <p>
-                    Tap to view -{" "}
+                    {!read && "Tap to view -"}{" "}
                     <TimeAgo date={new Date(timestamp?.toDate()).toUTCString()}/>
                 </p>
             </div>
